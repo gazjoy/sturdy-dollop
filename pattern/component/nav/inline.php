@@ -1,7 +1,6 @@
 <nav>
-    <ul class="nav nav--inline"><?php for($i=0; $i <=1; $i++) { ?>
-        <li><a href="#">Overview</a></li>
-        <li><a href="#">Credits</a></li>
-        <li><a href="#">Structure</a></li><?php } ?>
+    <ul class="nav nav--inline">
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
     </ul>
 </nav>

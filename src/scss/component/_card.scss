@@ -6,7 +6,6 @@
 %card {
     border: seperator(base, width) seperator(base, style) seperator(base, color);
     background-color: color(neutral, white);
-    border-radius: $border-radius;
 
     > [class*="__header"] {
         border-bottom: seperator(base, width) seperator(base, style) seperator(base, color);
@@ -19,14 +18,48 @@
     > [class*="__body"] > *:last-child {
         margin-bottom: 0;
     }
-
+    
     > [class*="__header"],
     > [class*="__body"],
     > [class*="__footer"] {
-        padding: spacing(lg);
+        padding-left: spacing();
+        padding-right: spacing();
+    }
+    
+    > [class*="__header"],
+    > [class*="__footer"] {
+        padding-top: spacing();
+        padding-bottom: spacing();
     }
 
     > [class*="__footer"] {
         border-top: seperator(base, width) seperator(base, style) seperator(base, color);
     }
+}
+
+
+/**
+ * Card block
+ */
+
+.card--block,
+%card--block {
+    > [class*="__header"] {
+        background-color: color(primary, pale-blue);
+        color: color(neutral, white);
+    }
+    > [class*="__body"] {
+        padding-top: spacing();
+        padding-bottom: spacing();
+    }
+}
+
+
+/**
+ * Card bordered
+ */
+
+.card--bordered,
+%card--bordered {
+    border: 1px solid color(neutral, light);
 }

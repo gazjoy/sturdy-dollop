@@ -10,10 +10,10 @@ $screen-max: screen( nth( map-keys($screens), length($screens) ) );
     margin-bottom: section($key, min);
 
     &-top {
-        margin-top: section($key, min);
+        margin-top: #{section($key, min)};
     }
     &-bottom {
-        margin-bottom: section($key, min);
+        margin-bottom: #{section($key, min)};
     }
 
     @include breakpoint($screen-min) {
@@ -21,10 +21,10 @@ $screen-max: screen( nth( map-keys($screens), length($screens) ) );
         margin-bottom: responsive-size(section($key, min), section($key, max));
 
         &-top {
-            margin-top: responsive-size(section($key, min), section($key, max));
+            margin-top: #{responsive-size(section($key, min), section($key, max))};
         }
         &-bottom {
-            margin-bottom: responsive-size(section($key, min), section($key, max));
+            margin-bottom: #{responsive-size(section($key, min), section($key, max))};
         }
     }
 
@@ -33,10 +33,10 @@ $screen-max: screen( nth( map-keys($screens), length($screens) ) );
         margin-bottom: section($key, max);
 
         &-top {
-            margin-top: section($key, max);
+            margin-top: #{section($key, max)};
         }
         &-bottom {
-            margin-bottom: section($key, max);
+            margin-bottom: #{section($key, max)};
         }
     }
 }

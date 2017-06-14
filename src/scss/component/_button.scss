@@ -1,17 +1,87 @@
 /**
- * Button
+ * Button color
+ */
+
+@mixin btn--color($color: color(neutral, white), $text-color: color(neutral, darker)) {
+    background-color: $color;
+    color: $text-color;
+    border-color: $color;
+    
+    &:hover,
+    &.is-active {
+        background-color: darken($color, 5%);
+        color: $text-color;
+    }
+    
+    &:active,
+    &.is-active {
+        outline: none;
+        border-color: darken($color, 5%);
+    }
+    
+    &:focus {
+        background-color: darken($color, 5%);
+        color: $text-color;
+    }
+}
+
+/**
+ * Button gradient
+ */
+
+@mixin btn--gradient($color: color(neutral, white), $text-color: color(neutral, darker)) {
+    border-color: darken($color, 10%);
+//    box-shadow: inset 0 0 1px color(neutral, white);
+    text-shadow: 0 0 1px rgba(0,0,0,0.1);
+    background: linear-gradient(
+        to bottom,
+        $color 0%,
+        $color 50%,
+        darken($color, 10%) 100%
+    );
+    &:hover {
+        background: linear-gradient(
+            to bottom,
+            $color 0%,
+            darken($color, 12%) 75%
+        );
+    }
+    &:focus {
+        background: linear-gradient(
+            to bottom,
+            $color 0%,
+            darken($color, 12%) 75%
+        );
+    }
+    &:active,
+    &.is-active {
+        border-color: darken($color, 15%);
+        background: linear-gradient(
+            to top,
+            $color 0%,
+            $color 50%,
+            darken($color, 8%) 100%
+        );
+    }
+    .btn__icon {
+        background-color: $color;
+        border-color: darken($color, 10%);
+    }
+}
+
+
+/**
+ * Base Button
  */
 
 .btn,
 %btn {
-    padding: spacing(xs) spacing();
-    border-radius: 0;
+    padding: 7px 16px;
+    border-radius: $border-radius;
     font-size: inherit;
-    font-family: inherit;
     font-weight: $bold;
-    line-height: inherit;
+    font-family: $font-family-special;
     text-decoration: none;
-    border: 1px solid transparent;
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
@@ -19,12 +89,46 @@
     white-space: nowrap;
     width: auto;
     fill: currentColor;
-
+    border: 1px solid transparent;
+    @include btn--color(color(neutral, lighter), color(neutral, darker));
+    
     &::moz-focus-inner {
         border: 0;
         padding: 0;
         margin-top: -2px;
         margin-bottom: -2px;
+    }
+    
+    &.is-active {
+        border-width: 2px;
+    }
+    
+    svg,
+    > * {
+        vertical-align: middle;
+    }
+    
+    .btn__icon {
+        display: inline-block;
+        display: inline-flex;
+        @include align-items(center);
+        @include justify-content(center);
+        text-align: center;
+        background-color: color(neutral, lighter);
+        border: 1px solid transparent;
+        box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
+        width: 2.2em;
+        height: 2.2em;
+        border-radius: 100%;
+        margin-left: -#{spacing(xs)};
+        margin-right: 0.2em;
+        > * {
+            vertical-align: bottom;
+        }
+    }
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(neutral, lightest), color(neutral, white));
     }
 }
 
@@ -36,6 +140,7 @@
 .btn--sm,
 %btn--sm {
     font-size: $font-size-sm;
+    padding: 4px 12px;
 }
 
 /**
@@ -45,6 +150,32 @@
 .btn--lg,
 %btn--lg {
     font-size: $font-size-lg;
+    padding: 8px 16px;
+}
+
+
+/**
+ * Button Text
+ */
+
+.btn--text,
+%btn--text {
+    @extend .link;
+    background-color: transparent;
+    border-color: transparent;
+    color: color(neutral, black);
+    font-weight: normal;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: color(neutral, black);
+        text-decoration: none;
+    }
+    &:disabled {
+        background-color: transparent;
+        color: color(neutral, grey);
+    }
 }
 
 
@@ -60,70 +191,6 @@
 
 
 /**
- * Button color variations
- */
-
-@each $button-key, $button-value in $buttons {
-    $button-class: 'btn';
-
-    @if($button-key != 'base') {
-        $button-class: 'btn--' + $button-key;
-    }
-
-    .#{$button-class},
-    %#{$button-class} {
-        @include button-colors($button-key, default);
-
-        @if(index(map-keys($button-value), 'visited') != null) {
-            &:visited {
-                @include button-colors($button-key, default);
-            }
-        }
-        @if(index(map-keys($button-value), 'hover') != null) {
-            &:hover {
-                @include button-colors($button-key, hover);
-            }
-        }
-        @if(index(map-keys($button-value), 'active') != null) {
-            &:active {
-                @include button-colors($button-key, active);
-            }
-        }
-        @if(index(map-keys($button-value), 'focus') != null) {
-            &:focus {
-                @include button-colors($button-key, focus);
-            }
-        }
-
-        &.btn--ghost {
-            @include button-ghost-colors($button-key, default);
-
-            @if(index(map-keys($button-value), 'visited') != null) {
-                &:visited {
-                    @include button-ghost-colors($button-key, default);
-                }
-            }
-            @if(index(map-keys($button-value), 'hover') != null) {
-                &:hover {
-                    @include button-ghost-colors($button-key, hover);
-                }
-            }
-            @if(index(map-keys($button-value), 'active') != null) {
-                &:active {
-                    @include button-ghost-colors($button-key, active);
-                }
-            }
-            @if(index(map-keys($button-value), 'focus') != null) {
-                &:focus {
-                    @include button-ghost-colors($button-key, focus);
-                }
-            }
-        }
-    }
-}
-
-
-/**
  * Button Disabled
  */
 
@@ -131,42 +198,88 @@
 %btn--disabled,
 .btn:disabled {
     cursor: not-allowed;
-    background-color: color(neutral, lighter);
-    border-color: color(neutral, light);
-    color: color(neutral, dark);
+    @include btn--color(color(neutral, lighter), color(neutral, light));
+}
 
-    &:hover,
-    &:focus {
-        background-color: color(neutral, lighter);
-        border-color: color(neutral, light);
-        color: color(neutral, dark);
+
+/**
+ * Button Buff
+ */
+
+.btn--buff,
+%btn--buff {
+    @include btn--color(color(neutral, white), color(primary, blue));
+    border-color: color(neutral, lighter);
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(neutral, white), color(neutral, lighter));
     }
 }
 
 
 /**
- * Button Text
+ * Button Lime
  */
 
-.btn--text,
-%btn--text {
-    @extend %link;
-    background-color: transparent;
-    color: color(neutral, black);
-    font-weight: inherit;
-    text-decoration: underline;
-    border-color: transparent;
-
-    &:hover,
-    &:focus {
-        background-color: transparent;
-        color: color(neutral, black);
-        border-color: transparent;
-        text-decoration: none;
+.btn--lime,
+%btn--lime {
+    @include btn--color(color(primary, lime), color(neutral, white));
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(primary, lime), color(neutral, white));
     }
+}
 
-    &:disabled {
-        background-color: transparent;
-        color: color(neutral, dark);
+/**
+ * Button green
+ */
+
+.btn--green,
+%btn--green {
+    @include btn--color(color(primary, green), color(neutral, white));
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(primary, green), color(neutral, white));
+    }
+}
+
+/**
+ * Button pink
+ */
+
+.btn--pink,
+%btn--pink {
+    @include btn--color(color(primary, pink), color(neutral, white));
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(primary, pink), color(neutral, white));
+    }
+}
+
+
+/**
+ * Button Pale Blue
+ */
+
+.btn--blue,
+%btn--blue {
+    @include btn--color(color(primary, blue), color(neutral, white));
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(primary, blue), color(neutral, white));
+    }
+}
+
+
+/**
+ * Button Pale Blue
+ */
+
+.btn--pale-blue,
+%btn--pale-blue {
+    @include btn--color(color(primary, pale-blue), color(neutral, white));
+    &.btn--gradient,
+    &%btn--gradient {
+        @include btn--gradient(color(primary, pale-blue), color(neutral, white));
     }
 }

@@ -3,15 +3,8 @@
  */
 
 @import "var";
-@import "helper/variable-function";
+@import "helper/function";
 
-
-/**
- * Settings for specific components and utilities
- */
-
-@import "setting";
-@import "helper/setting-function";
 
 /**
  * Helper Mixins
@@ -54,6 +47,7 @@
 @import "utility/typography";
 @import "utility/visible";
 @import "utility/z-index";
+@import "utility/wrapper";
 
 
 /**
@@ -75,24 +69,16 @@
  * Component
  */
 
-@import "component/accordion";
-@import "component/alert";
 @import "component/button";
-@import "component/breadcrumb";
 @import "component/card";
-@import "component/card-group";
 @import "component/checkbox";
 @import "component/drawer";
 @import "component/field-group";
-@import "component/title";
 @import "component/modal";
 @import "component/nav";
 @import "component/overlay";
-@import "component/pagination";
 @import "component/radio";
 @import "component/select";
 @import "component/single-form";
-@import "component/tabs";
-@import "component/table";
-@import "component/toggle-icon";
-@import "component/responsive-table";
+@import "component/header";
+@import "component/title";
