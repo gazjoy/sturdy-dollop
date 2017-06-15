@@ -1,0 +1,17 @@
+/**
+ * Banner
+ */
+
+.banner {
+    position: relative;
+    
+    &__content {
+        
+        @include breakpoint(screen(md)) {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

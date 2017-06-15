@@ -1,5 +1,5 @@
 <div class="u-wrapper">
-<?php printPattern('demo/header/base'); ?>
+<?php printPattern('component/header/base'); ?>
 <?php printPattern('component/banner/base'); ?>
 <?php printPattern('component/search-bar/base'); ?>
 
@@ -58,5 +58,5 @@
     </div>
 </section>
 
-<?php printPattern('demo/footer/base'); ?>
+<?php printPattern('component/footer/base'); ?>
 </div>

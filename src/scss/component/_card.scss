@@ -4,7 +4,6 @@
 
 .card,
 %card {
-    border: seperator(base, width) seperator(base, style) seperator(base, color);
     background-color: color(neutral, white);
 
     > [class*="__header"] {

@@ -73,6 +73,28 @@ mark {
     color: color(neutral, black);
 }
 
+/**
+ * Blockquote
+ */
+
+blockquote {
+    p {
+        &::before,
+        &::after {
+            font-family: $font-family-special;
+            color: color(primary, blue);
+            font-size: $font-size-lg * 6;
+            line-height: 1;
+        }
+    
+        &::before {
+            content: "“";
+        }
+        &::after {
+            content: "”";
+        }
+    }
+}
 
 /**
  * Link
