@@ -63,7 +63,7 @@
     .radio {
         @include breakpoint(screen(md)) {
             display: inline-block;
-            margin-right: spacing();
+            margin-right: spacing(lg);
             margin-bottom: 0;
         }
     }
