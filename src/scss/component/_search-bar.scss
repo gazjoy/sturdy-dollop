@@ -1,0 +1,108 @@
+/**
+ * Search Bar
+ *
+ */
+
+
+.search-bar {
+    @include flex;
+    
+    @include breakpoint(max-width screen(xs, max)) {
+        flex-direction: column;
+    }
+    @include breakpoint(screen(lg)) {
+        flex-direction: column;
+    }
+    
+    margin-bottom: spacing(xl);
+    
+    > * {
+        @extend %u-block;
+        @extend %u-text-neutral-white;
+    }
+    
+    &__header {
+        @include breakpoint(max-width screen(xs, max)) {
+            background-color: color(primary, pale-blue);
+        }
+        @include breakpoint(screen(sm)) {
+            background-color: color(primary, blue);
+        }
+    }
+    
+    &__footer {
+        @extend %u-fill-primary-pale-blue;
+    }
+    
+    &__title {
+        @extend %h2;
+        margin-bottom: 0;
+        
+        @include breakpoint(screen(md)) {
+            display: inline-block;
+            margin-right: spacing(lg);
+        }
+    }
+}
+
+
+/**
+ * Radio Group
+ *
+ */
+
+.search-bar {
+    
+    @include breakpoint(screen(sm)) {
+        @include flex;
+        > *:first-child {
+            flex-shrink: 0;
+        }
+    }
+    
+    .radio {
+        @include breakpoint(screen(md)) {
+            display: inline-block;
+            margin-right: spacing();
+            margin-bottom: 0;
+        }
+    }
+    .radio__label {
+        @extend %h4;
+    }
+}
+
+.search-bar__options {
+    @extend %u-list-unstyled;
+    @extend %u-list-inline;
+    
+    @include breakpoint(screen(lg)) {
+        display: inline-block;
+    }
+    
+    li {
+        @include breakpoint(max-width screen(md, max)) {
+            display: block;
+        }
+//        @include breakpoint(screen(md) screen(md, max)) {
+//            width: 40%;
+//            float: left;
+//        }
+    }
+}
+
+
+/**
+ * Action
+ *
+ */
+
+.search-bar__action {
+    @extend %btn--lg;
+    @extend %btn--buff;
+    @extend %btn--block;
+    
+    @include breakpoint(screen(lg)) {
+        margin-top: spacing(lg);
+    }
+}

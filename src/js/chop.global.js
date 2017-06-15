@@ -12,6 +12,18 @@
         $('#overlay').on('toggledeactivate', function() {
             $('body').removeClass('has-active-overlay');
         });
+        
+        
+        // =============================================
+        // Initialise the BX Slider
+        // =============================================
+        
+        $('.js-carousel').bxSlider({
+            auto: true,
+            pager: false,
+            prevSelector: ".js-carousel-controls",
+            nextSelector: ".js-carousel-controls"
+        });
 
     });
 }(jQuery));

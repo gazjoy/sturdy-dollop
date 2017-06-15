@@ -30,8 +30,8 @@
             &::after {
                 @include tick(color(neutral, white), 10px, 2px);
                 position: absolute;
-                left: 8px;
-                top: 4px;
+                left: 6px;
+                top: 3px;
                 opacity: 0;
                 transition: opacity $animation-speed ease;
             }

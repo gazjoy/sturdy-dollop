@@ -1,0 +1,56 @@
+/**
+ * Carousel
+ */
+
+.carousel {
+    &__item:not(:first-child) {
+        display: none;
+    }
+    
+    &__controls {
+        position: relative;
+    }
+}
+
+
+/**
+ * BX Slider
+ */
+
+.bx-wrapper {
+    position: relative;
+    .carousel__item {
+        display: block;
+    }
+}
+
+.bx-prev,
+.bx-next {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    display: block;
+    width: 2em;
+    height: 2em;
+    background-color: color(neutral, white);
+}
+
+.bx-prev {
+    left: 0;
+}
+.bx-next {
+    right: 0;
+}
+
+@include breakpoint(screen(md)) {
+    .bx-prev,
+    .bx-next {
+        top: 50%;
+    }
+    .bx-prev {
+        left: spacing();
+    }
+    .bx-next {
+        right: spacing();
+    }
+}

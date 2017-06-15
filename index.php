@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="robots" content="noindex">
@@ -30,10 +30,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo getUrl('build/vendor/normalize.css/normalize.css'); ?>" media="all" />
     <link rel="stylesheet" type="text/css" href="<?php echo getUrl('build/css/styles.css'); ?>" media="screen" />
     <link rel="stylesheet" type="text/css" href="<?php echo getUrl('build/vendor/font/Rockwell/styles.css'); ?>" media="screen" />
-    <?php /* ?>
-    <script src="<?php echo getUrl('build/vendor/element-queries/ResizeSensor.js'); ?>"></script>
-    <script src="<?php echo getUrl('build/vendor/element-queries/ElementQueries.js'); ?>"></script>
-    <?php */ ?>
     <link rel="stylesheet" type="text/css" href="<?php echo getUrl('build/css/chopchop-ui.css'); ?>" media="screen" />
     <?php if(!isset($_GET['preview'])) : ?>
     <link rel="stylesheet" type="text/css" href="<?php echo getUrl('build/vendor/prismjs/prism.css'); ?>" media="all" />
@@ -46,7 +42,7 @@
 
     <?php if(!isset($_GET['preview'])) : ?>
         <header class="cc-header">
-            <div class="u-container">
+            <div>
                 <div class="grid g-center g-gutter-x g-stretch-last">
                     <div>
                         <a href="#" class="js-cc-toggle" id="cc-menu-trigger" data-cc-toggle-action="toggle" data-cc-toggle-target="#cc-nav">
@@ -98,13 +94,11 @@
     <script src="<?php echo getUrl('build/vendor/jquery/jquery.js'); ?>"></script>
     <script src="<?php echo getUrl('build/vendor/jquery/jquery-no-conflict.js'); ?>"></script>
     <script src="<?php echo getUrl('build/vendor/jquery/jquery-ui.min.js'); ?>"></script>
+    <script src="<?php echo getUrl('build/vendor/bxslider/bxslider.js'); ?>"></script>
     <script src="<?php echo getUrl('build/js/chop.base.widget.js'); ?>"></script>
     <script src="<?php echo getUrl('build/js/chop.toggle.widget.js'); ?>"></script>
     <script src="<?php echo getUrl('build/js/chop.collapsible.widget.js'); ?>"></script>
     <script src="<?php echo getUrl('build/js/chop.global.js'); ?>"></script>
-
-    <!-- Placeholder for kitchen-sink scripts -->
-    <?php if(file_exists(__DIR__ . '/kitchen-sink.php')) { require_once('kitchen-sink.php'); }?>
 
     <?php if(!isset($_GET['preview'])) : ?>
         <script src="<?php echo getUrl('build/vendor/js.cookie/js.cookie.js'); ?>"></script>

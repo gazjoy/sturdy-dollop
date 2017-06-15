@@ -8,10 +8,6 @@
 
     > * {
         width: 100%;
-
-        > *:first-child {
-            margin-bottom: 0;
-        }
     }
 }
 
@@ -20,7 +16,7 @@
  * Grid Gutter X
  */
 
-@mixin grid-gutter-x($gap: gutter('base')) {
+@mixin grid-gutter-x($gap: $gutter-x) {
     $half-gap: $gap / 2;
     margin-left: -$half-gap;
     margin-right: -$half-gap;
@@ -36,7 +32,7 @@
  * Grid Gutter Y
  */
 
-@mixin grid-gutter-y($gap: gutter('base'), $edge: spacing()) {
+@mixin grid-gutter-y($gap: $gutter-x, $edge: spacing()) {
     > * {
         margin-bottom: $gap;
 

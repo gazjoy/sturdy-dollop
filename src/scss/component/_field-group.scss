@@ -4,14 +4,17 @@
 
 .field-group,
 %field-group {
-    margin: spacing() 0;
+    margin: spacing(xs) 0;
 
     .field-group {
         margin-top: spacing(xs);
         margin-bottom: spacing(xs);
     }
+}
 
-    &:first-child {
-        margin-top: 0;
-    }
+
+.field-group--inline,
+%field-group--inline {
+    display: inline-block;
+    margin-bottom: 0;
 }

@@ -8,10 +8,35 @@
     &__content {
         
         @include breakpoint(screen(md)) {
+            
             width: 100%;
             position: absolute;
+            top: 0;
             bottom: 0;
             left: 0;
+            
+            > * {
+                position: relative;
+                height: 100%;
+                @include flex;
+                @include flex-direction(column);
+                @include justify-content(flex-end);
+            }
+        }
+    }
+    @include breakpoint(screen(md)) {
+        .card {
+            margin-bottom: spacing(xl);
+        }
+    }
+    @include breakpoint(max-width screen(sm, max)) {
+        .card {
+            margin-top: spacing();
+            margin-bottom: spacing();
+        }
+        .card__body {
+            border: 1px solid color(neutral, lighter);
+            border-top: 0;
         }
     }
 }
