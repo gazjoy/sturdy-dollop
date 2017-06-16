@@ -27,7 +27,7 @@
     left: 0;
     z-index: 999;
     font-size: 16px;
-    padding: spacing(sm) 0;
+    padding: spacing(sm);
     @include flex;
     @include align-items(center);
     background-color: color(neutral,darkest);

@@ -27,6 +27,18 @@
     @include grid-gutter-y;
 }
 
+
+/**
+ * Grid Gutter
+ */
+
+.g-gutter,
+%g-gutter {
+    @extend %g-gutter-x;
+    @extend %g-gutter-y;
+}
+
+
 /**
  * Grid Gutter X Lg
  */

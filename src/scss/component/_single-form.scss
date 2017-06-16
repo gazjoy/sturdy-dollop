@@ -6,12 +6,19 @@
 
 .single-form,
 %single-form {
+    position: relative;
     input {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-right: 0;
+        border-radius: spacing(lg);
+        padding-right: 40px;
     }
     .btn {
+        border-radius: spacing(lg);
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        padding-top: 1px;
+        padding-bottom: 4px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
