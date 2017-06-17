@@ -9,16 +9,18 @@
     position: relative;
     input {
         border-radius: spacing(lg);
+        padding-left: 16px;
         padding-right: 40px;
     }
     .btn {
+        border: 0;
+        background: transparent;
         border-radius: spacing(lg);
         position: absolute;
         top: 2px;
         right: 2px;
         bottom: 2px;
-        padding-top: 1px;
-        padding-bottom: 4px;
+        padding: 1px 4px 4px 8px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }

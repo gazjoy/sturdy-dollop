@@ -1,13 +1,25 @@
 <div class="carousel">
     <div class="js-carousel">
         <div class="carousel__item">
-            <img src="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" width="1200" height="360" alt="Smiling Family" />
+            <picture>
+                <source srcset="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" media="(min-width: 768px) and (max-width: 1199px)" />
+                <source srcset="//placehold.it/1300x390" media="(min-width: 1200px)" />
+                <img srcset="//placehold.it/768x300" alt="Smiling Family" />
+            </picture>
         </div>
         <div class="carousel__item">
-            <img src="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" width="1200" height="360" alt="Smiling Family" />
+            <picture>
+                <source srcset="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" media="(min-width: 768px) and (max-width: 1199px)" />
+                <source srcset="//placehold.it/1300x390" media="(min-width: 1200px)" />
+                <img srcset="//placehold.it/768x300" alt="Smiling Family" />
+            </picture>
         </div>
         <div class="carousel__item">
-            <img src="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" width="1200" height="360" alt="Smiling Family" />
+            <picture>
+                <source srcset="<?php echo getUrl('build/img/banner/banner.jpg'); ?>" media="(min-width: 768px) and (max-width: 1199px)" />
+                <source srcset="//placehold.it/1300x390" media="(min-width: 1200px)" />
+                <img srcset="//placehold.it/768x300" alt="Smiling Family" />
+            </picture>
         </div>
     </div>
 </div>

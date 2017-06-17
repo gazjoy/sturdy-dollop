@@ -19,7 +19,7 @@
         // =============================================
         
         $('.js-carousel').bxSlider({
-            auto: true,
+            auto: false,
             pager: false,
             prevSelector: ".js-carousel-controls",
             nextSelector: ".js-carousel-controls"

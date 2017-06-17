@@ -1,0 +1,18 @@
+.primary-nav {
+    ul {
+        @extend %nav;
+        @extend %nav--inline;
+        @extend %nav--space;
+    }
+    
+    @include breakpoint(max-width screen(sm, max)) {
+        li {
+            flex: 1;
+            margin-right: spacing(xs);
+        }
+        .btn .icon {
+            display: none;
+        }
+    }
+}
+

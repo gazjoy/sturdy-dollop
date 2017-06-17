@@ -3,12 +3,36 @@
 }
 
 .header__body {
-    @include flex;
-    @include justify-content(space-between);
+    
     padding-top: spacing();
     padding-bottom: spacing();
     
-    @include breakpoint(max-width screen(sm, max)) {
-        @include flex-wrap(wrap);
+    @include breakpoint(screen(md)) {
+        @include flex;
+        @include align-items(center);
+        @include justify-content(space-between);
     }
+}
+
+.header__auxilliary {
+    @include flex;
+    @include align-items(center);
+    @include justify-content(space-between);
+    
+    @include breakpoint(max-width screen(sm, max)) {
+        > *:last-child {
+            flex-shrink: 0;
+            margin-left: spacing(xs);
+        }
+    }
+    
+    @include breakpoint(screen(md)) {
+        @include align-items(flex-end);
+        @include flex-direction(column);
+        > *:last-child {
+            margin-top: spacing(sm);
+        }
+    }
+    
+    
 }

@@ -47,7 +47,8 @@
         margin-bottom: spacing(sm);
     }
 
-    &.nav--inline > * {
+    &.nav--inline > *,
+    &%nav--inline > * {
         margin-right: spacing(sm);
 
         &:last-child {
@@ -96,5 +97,19 @@
 
     a {
         white-space: nowrap;
+    }
+}
+
+
+/**
+ * Nav Break
+ */
+
+.nav--break,
+%nav--break {
+    li:not(:last-child) {
+        padding-right: spacing(xs);
+        margin-right: spacing(xs);
+        border-right: 1px solid color(neutral, lighter);
     }
 }
