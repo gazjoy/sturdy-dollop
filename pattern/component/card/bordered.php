@@ -1,6 +1,9 @@
 <div class="card card--bordered">
     
-    <img src="<?php echo getUrl('build/img/placeholder/215x100.png'); ?>" width="215" height="100" alt="Placeholder" />
+    <picture>
+        <source srcset="//placehold.it/300x140" media="(min-width: 768px)" />
+        <img src="//placehold.it/560x260" alt="Placeholder" />
+    </picture>
     
     <div class="card__header">
         <h3>Group booking?</h3>

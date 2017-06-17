@@ -78,9 +78,16 @@ mark {
  */
 
 blockquote {
+    margin-left: 0;
+    margin-right: 0;
     p {
+        @extend %h3;
+        line-height: 1.4;
+        font-style: italic;
+        position: relative;
         &::before,
         &::after {
+            position: absolute;
             font-family: $font-family-special;
             color: color(primary, blue);
             font-size: $font-size-lg * 6;
@@ -89,6 +96,8 @@ blockquote {
     
         &::before {
             content: "“";
+            right: 100%;
+            top: -1em;
         }
         &::after {
             content: "”";

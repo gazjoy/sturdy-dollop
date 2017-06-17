@@ -31,6 +31,8 @@
         'list',
         'link',
         'table2',
+        'arrow-right4',
+        'arrow-left4'
     );
 ?>
 <ul class="nav nav--inline nav--space">

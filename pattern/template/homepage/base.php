@@ -6,16 +6,16 @@
 <section>
     <div class="u-container">
         <div class="grid g-gutter-lg">
-            <div class="g-col-xs-6 g-col-md-3">
+            <div class="g-col-sm-6 g-col-md-3">
                 <?php printPattern('component/card/bordered'); ?>
             </div>
-            <div class="g-col-xs-6 g-col-md-3">
+            <div class="g-col-sm-6 g-col-md-3">
                 <?php printPattern('component/card/bordered'); ?>
             </div>
-            <div class="g-col-xs-6 g-col-md-3">
+            <div class="g-col-sm-6 g-col-md-3">
                 <?php printPattern('component/card/bordered'); ?>
             </div>
-            <div class="g-col-xs-6 g-col-md-3">
+            <div class="g-col-sm-6 g-col-md-3">
                 <?php printPattern('component/card/bordered'); ?>
             </div>
         </div>
@@ -37,10 +37,13 @@
     <div class="u-container u-section-xs">
         
         <div class="grid g-gutter-lg">
-            <div>
+            <div class="g-col-md-4">
+                
                 <div class="card card--bordered">
                     <div class="card__header">
                         <h3>Top 5 questions being asked</h3>
+                    </div>
+                    <div class="card__body">
                         <ul class="u-list-unstyled">
                             <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit erat a ornare tincidunt?</a></li>
                             <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit erat a ornare tincidunt?</a></li>
@@ -52,9 +55,38 @@
                         <a href="#" class="btn btn--buff btn--gradient">View all holiday questions</a>
                     </div>
                 </div>
+                
             </div>
+            <div class="g-col-md-4">
+                
+                <div class="card card--bordered">
+                    <div class="card__header">
+                        <h3>Featured park</h3>
+                    </div>
+                    <div class="card__body">
+                        <img src="//placehold.it/768x300" alt="Featured Park" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit erat a ornare tincidunt?</p>
+                    </div>
+                    <div class="card__footer">
+                        <a href="#" class="btn btn--buff btn--gradient">View all holiday questions</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="g-col-md-4">
+                
+                <div class="card card--bordered">
+                    <div class="card__header">
+                        <h3>Upcoming availability</h3>
+                    </div>
+                    <div class="card__footer">
+                        items
+                    </div>
+                </div>
+                
+            </div>
+            
         </div>
-        
     </div>
 </section>
 

@@ -6,10 +6,15 @@
     }
     
     @include breakpoint(max-width screen(sm, max)) {
+        .btn {
+            @include flex;
+        }
         li {
             flex: 1;
             margin-right: spacing(xs);
         }
+    }
+    @include breakpoint(max-width screen(xs, max)) {
         .btn .icon {
             display: none;
         }
