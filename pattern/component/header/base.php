@@ -1,5 +1,4 @@
-<header role="banner" class="u-fill-neutral-white">
-    
+<header role="banner" class="header u-fill-neutral-white">
     <div class="header__body u-container">
         <div class="header__main">
             <?php printPattern('component/primary-nav/base'); ?>

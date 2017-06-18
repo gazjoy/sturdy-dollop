@@ -8,10 +8,10 @@
     @include flex;
     
     @include breakpoint(max-width screen(xs, max)) {
-        flex-direction: column;
+        @include flex-direction(column);
     }
     @include breakpoint(screen(lg)) {
-        flex-direction: column;
+        @include flex-direction(column);
     }
     
     margin-bottom: spacing(xl);
@@ -84,10 +84,6 @@
         @include breakpoint(max-width screen(md, max)) {
             display: block;
         }
-//        @include breakpoint(screen(md) screen(md, max)) {
-//            width: 40%;
-//            float: left;
-//        }
     }
 }
 
