@@ -1,3 +1,4 @@
+<a href="#main" class="u-visually-hidden">Skip to main content</a>
 <header role="banner" class="header u-fill-neutral-white">
     <div class="header__body u-container">
         <div class="header__main">

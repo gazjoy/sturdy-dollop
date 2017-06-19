@@ -84,20 +84,16 @@ blockquote {
         @extend %h3;
         line-height: 1.4;
         font-style: italic;
-        position: relative;
         &::before,
         &::after {
-            position: absolute;
             font-family: $font-family-special;
             color: color(primary, blue);
-            font-size: $font-size-lg * 6;
+            font-size: $font-size-lg * 4;
             line-height: 1;
         }
     
         &::before {
             content: "“";
-            right: 100%;
-            top: -1em;
         }
         &::after {
             content: "”";

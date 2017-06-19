@@ -7,16 +7,4 @@
     max-width: 92em;
     margin: 0 auto;
     background-color: color(neutral, white);
-    
-    // Prioritise search bar on mobile
-    @include breakpoint(max-width screen(xs, max)) {
-        @include flex;
-        @include flex-direction(column);
-        .header {
-            order: -20;
-        }
-        .search-bar {
-            order: -10;
-        }
-    }
 }

@@ -1,4 +1,4 @@
-<div class="banner">
+<div id="banner" class="banner">
     <?php printPattern('component/carousel/base'); ?>
     <div class="banner__content">
         <div class="u-container">

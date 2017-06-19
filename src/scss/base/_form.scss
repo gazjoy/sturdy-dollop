@@ -96,6 +96,19 @@ input[type="submit"].btn {
     vertical-align: bottom;
 }
 
+::-webkit-input-placeholder {
+    color: #626262;
+}
+::-moz-placeholder {
+    color: #626262;
+}
+:-moz-placeholder {  /* Older versions of Firefox */
+    color: #626262;
+}
+:-ms-input-placeholder {
+    color: #626262;
+}
+
 
 /**
  * Fieldsets

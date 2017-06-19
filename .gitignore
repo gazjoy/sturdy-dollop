@@ -34,3 +34,5 @@ npm-debug.log
 .profile
 .ssh
 log
+
+build

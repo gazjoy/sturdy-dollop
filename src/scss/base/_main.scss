@@ -1,0 +1,15 @@
+/**
+ * Main
+ */
+
+.main {
+    
+    // Prioritise search bar on mobile
+    @include breakpoint(max-width screen(xs, max)) {
+        @include flex;
+        @include flex-direction(column);
+        .search-bar {
+            order: -10;
+        }
+    }
+}

@@ -1,9 +1,7 @@
-.header {
-    
-}
+
+.header {}
 
 .header__body {
-    
     padding-top: spacing();
     padding-bottom: spacing();
     
@@ -20,6 +18,9 @@
     @include justify-content(space-between);
     
     @include breakpoint(max-width screen(sm, max)) {
+        > *:first-child {
+            flex-grow: 1;
+        }
         > *:last-child {
             flex-shrink: 0;
             margin-left: spacing(xs);
@@ -34,5 +35,11 @@
         }
     }
     
+    @include breakpoint(screen(lg)) {
+        width: 30%;
+        .single-form {
+            width: 100%;
+        }
+    }
     
 }
